@@ -1,0 +1,22 @@
+{
+  "name": "@local/effort-slider",
+  "version": "1.0.0",
+  "private": true,
+  "description": "推理等级滑动变阻器 —— 用滑块替代官方的按钮列表，双层结构：第一层选模型/推理等级，第二层是滑块。",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-client-ui-model-selection"]
+    }
+  }
+}
